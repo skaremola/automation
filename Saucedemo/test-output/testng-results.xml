@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="5" passed="5">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Login with different users" duration-ms="31402" started-at="2023-06-07T15:12:08 EDT" finished-at="2023-06-07T15:12:39 EDT">
+    <groups>
+    </groups>
+    <test name="Login with standard_user" duration-ms="9451" started-at="2023-06-07T15:12:08 EDT" finished-at="2023-06-07T15:12:17 EDT">
+      <class name="tests.LoginPageTest">
+        <test-method status="PASS" signature="setup(org.testng.ITestContext)[pri:0, instance:tests.LoginPageTest@27a8c74e]" name="setup" is-config="true" duration-ms="8087" started-at="2023-06-07T15:12:08 EDT" finished-at="2023-06-07T15:12:16 EDT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@dcc6211]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="verifyLogin(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:tests.LoginPageTest@27a8c74e]" name="verifyLogin" duration-ms="556" started-at="2023-06-07T15:12:16 EDT" finished-at="2023-06-07T15:12:16 EDT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[standard_user]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[secret_sauce]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[yes]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyLogin -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:tests.LoginPageTest@27a8c74e]" name="tearDown" is-config="true" duration-ms="761" started-at="2023-06-07T15:12:16 EDT" finished-at="2023-06-07T15:12:17 EDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- tests.LoginPageTest -->
+    </test> <!-- Login with standard_user -->
+    <test name="Login with locked_out_user" duration-ms="3336" started-at="2023-06-07T15:12:17 EDT" finished-at="2023-06-07T15:12:20 EDT">
+      <class name="tests.LoginPageTest">
+        <test-method status="PASS" signature="setup(org.testng.ITestContext)[pri:0, instance:tests.LoginPageTest@2a556333]" name="setup" is-config="true" duration-ms="2034" started-at="2023-06-07T15:12:17 EDT" finished-at="2023-06-07T15:12:19 EDT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@47ec7422]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="verifyLogin(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:tests.LoginPageTest@2a556333]" name="verifyLogin" duration-ms="575" started-at="2023-06-07T15:12:19 EDT" finished-at="2023-06-07T15:12:20 EDT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[locked_out_user]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[secret_sauce]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[no]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyLogin -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:tests.LoginPageTest@2a556333]" name="tearDown" is-config="true" duration-ms="721" started-at="2023-06-07T15:12:20 EDT" finished-at="2023-06-07T15:12:20 EDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- tests.LoginPageTest -->
+    </test> <!-- Login with locked_out_user -->
+    <test name="Login with problem_user" duration-ms="6560" started-at="2023-06-07T15:12:20 EDT" finished-at="2023-06-07T15:12:27 EDT">
+      <class name="tests.LoginPageTest">
+        <test-method status="PASS" signature="setup(org.testng.ITestContext)[pri:0, instance:tests.LoginPageTest@7e2d773b]" name="setup" is-config="true" duration-ms="5293" started-at="2023-06-07T15:12:20 EDT" finished-at="2023-06-07T15:12:26 EDT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@48535004]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="verifyLogin(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:tests.LoginPageTest@7e2d773b]" name="verifyLogin" duration-ms="565" started-at="2023-06-07T15:12:26 EDT" finished-at="2023-06-07T15:12:26 EDT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[problem_user]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[secret_sauce]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[yes]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyLogin -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:tests.LoginPageTest@7e2d773b]" name="tearDown" is-config="true" duration-ms="697" started-at="2023-06-07T15:12:26 EDT" finished-at="2023-06-07T15:12:27 EDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- tests.LoginPageTest -->
+    </test> <!-- Login with problem_user -->
+    <test name="Login with performance_glitch_user" duration-ms="8575" started-at="2023-06-07T15:12:27 EDT" finished-at="2023-06-07T15:12:36 EDT">
+      <class name="tests.LoginPageTest">
+        <test-method status="PASS" signature="setup(org.testng.ITestContext)[pri:0, instance:tests.LoginPageTest@2353b3e6]" name="setup" is-config="true" duration-ms="2280" started-at="2023-06-07T15:12:27 EDT" finished-at="2023-06-07T15:12:29 EDT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@610df783]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="verifyLogin(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:tests.LoginPageTest@2353b3e6]" name="verifyLogin" duration-ms="5578" started-at="2023-06-07T15:12:29 EDT" finished-at="2023-06-07T15:12:35 EDT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[performance_glitch_user]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[secret_sauce]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[yes]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyLogin -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:tests.LoginPageTest@2353b3e6]" name="tearDown" is-config="true" duration-ms="711" started-at="2023-06-07T15:12:35 EDT" finished-at="2023-06-07T15:12:36 EDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- tests.LoginPageTest -->
+    </test> <!-- Login with performance_glitch_user -->
+    <test name="Elements check in Homepage" duration-ms="3365" started-at="2023-06-07T15:12:36 EDT" finished-at="2023-06-07T15:12:39 EDT">
+      <class name="tests.HomePageTest">
+        <test-method status="PASS" signature="setup(org.testng.ITestContext)[pri:0, instance:tests.HomePageTest@1a1d6a08]" name="setup" is-config="true" duration-ms="2533" started-at="2023-06-07T15:12:36 EDT" finished-at="2023-06-07T15:12:38 EDT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@f3fcd59]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="verifyHomePage()[pri:0, instance:tests.HomePageTest@1a1d6a08]" name="verifyHomePage" duration-ms="173" started-at="2023-06-07T15:12:38 EDT" finished-at="2023-06-07T15:12:38 EDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyHomePage -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:tests.HomePageTest@1a1d6a08]" name="tearDown" is-config="true" duration-ms="657" started-at="2023-06-07T15:12:38 EDT" finished-at="2023-06-07T15:12:39 EDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- tests.HomePageTest -->
+    </test> <!-- Elements check in Homepage -->
+  </suite> <!-- Login with different users -->
+</testng-results>
