@@ -10,6 +10,8 @@ public class LoginPage {
 	By usernameField = By.id("user-name");
 	By passwordField = By.id("password");
 	By signInButton = By.id("login-button");
+	By openMenu = By.cssSelector("button#react-burger-menu-btn");
+	By logOutButton = By.xpath("//a[text()='Logout']");
 	By sauseLogo = By.cssSelector("div.login_logo");
 	By errorContainer = By.cssSelector("h3");
 
@@ -20,7 +22,15 @@ public class LoginPage {
 		this.driver=driver;
 		wait = new WebDriverWait(driver, 10);
 	}
-
+	
+	public void openMenu() {
+		driver.findElement(openMenu).click();
+	}
+	
+	public void logOut() {
+		driver.findElement(logOutButton).click();
+	}
+	
 	public void typeUsername(String username) { //pass a parameter so we don't hardcode values in the object class.
 		driver.findElement(usernameField).clear();
 		driver.findElement(usernameField).sendKeys(username);

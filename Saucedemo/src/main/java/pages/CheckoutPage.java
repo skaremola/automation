@@ -8,9 +8,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class CheckoutPage {
 	
-	By removeButton = By.xpath("//*[@id='remove-sauce-labs-bike-light']");
-	By continueShopping = By.xpath("//*[@id='continue-shopping']");
-	By checkOut = By.xpath("//*[@id='checkout']");
+	By product = By.cssSelector("a#item_4_title_link");
+	By removeButton = By.xpath("//button[text()='Remove']");
+	By continueShopping = By.xpath("//button[text()='Continue Shopping']");
+	By checkOut = By.xpath("//button[text()='Checkout']");
 	By firstNameField = By.name("firstName");
 	By lastNameField = By.name("lastName");
 	By phoneField = By.name("phoneNumber");
@@ -36,6 +37,11 @@ public class CheckoutPage {
 		return true;
 	}
 
+	public boolean checkProductExist() {
+		if (!(driver.findElements(product).size() > 0))
+			return false;
+		return true;
+	}
 	public CheckoutPage(WebDriver driver) {
 		this.driver=driver;
 		wait = new WebDriverWait(driver, 5);
@@ -91,6 +97,12 @@ public class CheckoutPage {
 	public boolean isContinueButtonEnabled() {
 		return wait.until(ExpectedConditions.elementToBeClickable(continueToPaymentButton)).isDisplayed();
 	}
-
-
+	
+	public void removeFromCart() {
+		driver.findElement(removeButton).click();
+	}
+	
+	public void continueShopping() {
+		driver.findElement(continueShopping).click();
+	}
 }

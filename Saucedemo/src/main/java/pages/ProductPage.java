@@ -15,9 +15,10 @@ public class ProductPage {
 
 	By productSortContainer = By.cssSelector("select.product_sort_container");
 	By products = By.xpath("//*[@class='inventory_item']");
-	String addToCart = "(//button[text()='Add to cart'])[index]";
-	String itemPrice = "(//div[@class='inventory_item_price'])[index]";
-	String productName= "(//div[@class='inventory_item_name'])[index]";
+	String addToCart = "(//button[text()='Add to cart'])[1]";
+	String itemPrice = "(//div[@class='inventory_item_price'])[1]";
+	String productName= "(//div[@class='inventory_item_name'])[1]";
+	By cartSymbol = By.cssSelector("a.shopping_cart_link");
 //	By addtoCart2 = By.xpath("//button[text()='Add to cart']");
 //	By addToCart3 = By.xpath("//button[@name='add-to-cart-sauce-labs-backpack']");
 //	By itemPrice1 = By.xpath("//div[@class='inventory_item_price']");
@@ -53,6 +54,13 @@ public class ProductPage {
 		drpCountry.selectByVisibleText("Price (high to low)");
 	}
 	
+	public void addToCart() {
+		driver.findElement(By.xpath(addToCart)).click();
+	}
+
+	public void clickCartSymbol() {
+		driver.findElement(cartSymbol).click();
+	}
 
 	public void pressEnter() {
 		new Actions(driver).sendKeys(Keys.ENTER).perform();

@@ -89,6 +89,7 @@ public class HomePage {
 
 	public boolean isCartPageLoaded() {
 		return wait.until(ExpectedConditions.visibilityOfElementLocated(checkoutButton)).isDisplayed();
+		
 	}
 
 }

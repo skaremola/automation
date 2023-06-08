@@ -42,4 +42,12 @@
 			<class name="tests.HomePageTest" />
 		</classes>
 	</test>
+			<test name="Add product to cart">
+		<parameter name="username" value="standard_user" />
+		<parameter name="password" value="secret_sauce" />
+		<parameter name="isvaliduser" value="yes"/>
+		<classes>
+			<class name="tests.ProductPageTest" />
+		</classes>
+		</test>
 </suite>

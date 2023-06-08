@@ -4,15 +4,19 @@
   <listeners>
     <listener class-name="util.ExtentReportListener"/>
   </listeners>
-  <test thread-count="5" name="Elements check in Homepage(failed)">
+  <test thread-count="5" name="Add product to cart(failed)">
+    <parameter name="password" value="secret_sauce"/>
+    <parameter name="isvaliduser" value="yes"/>
+    <parameter name="username" value="standard_user"/>
     <classes>
-      <class name="tests.HomePageTest">
+      <class name="tests.ProductPageTest">
         <methods>
           <include name="tearDown"/>
+          <include name="verifyRemoveFromCart" invocation-numbers="0"/>
+          <include name="verifyContinueShopping" invocation-numbers="0"/>
           <include name="setup"/>
-          <include name="verifyHomePage"/>
         </methods>
-      </class> <!-- tests.HomePageTest -->
+      </class> <!-- tests.ProductPageTest -->
     </classes>
-  </test> <!-- Elements check in Homepage(failed) -->
+  </test> <!-- Add product to cart(failed) -->
 </suite> <!-- Failed suite [Login with different users] -->
