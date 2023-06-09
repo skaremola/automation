@@ -8,40 +8,32 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class CheckoutPage {
 	
-	By product = By.cssSelector("a#item_4_title_link");
-	By removeButton = By.xpath("//button[text()='Remove']");
-	By continueShopping = By.xpath("//button[text()='Continue Shopping']");
-	By checkOut = By.xpath("//button[text()='Checkout']");
-	By firstNameField = By.name("firstName");
-	By lastNameField = By.name("lastName");
-	By phoneField = By.name("phoneNumber");
-	By addressField = By.name("address1");
-	By cityField = By.name("city");
-	By stateProvinceDropdown = By.cssSelector("._296s._47p_");
-	By zipcodeField = By.name("postalCode");
-	By emailField = By.name("email");
-	By emailOptInCheckbox = By.name("optInAsGuest");
-	By continueToPaymentButton = By.name("submit");
-	By errorContainer = By.xpath("//div[@class=' _64f3'][contains(text(), 'Please specify a valid email')]");
+	By firstNameField = By.cssSelector("input#first-name");
+	By lastNameField = By.cssSelector("input#last-name");
+	By postalCodeField = By.cssSelector("input#postal-code");
+	By cancelButton = By.cssSelector("button#cancel");
+	By continueButton = By.cssSelector("input#continue");
+	
 
 	WebDriver driver;
 	WebDriverWait wait;
 	
 	public boolean checkElementsExist() {
-		if (!(driver.findElements(removeButton).size() > 0))
+		if (!(driver.findElements(firstNameField).size() > 0))
 			return false;
-		if (!(driver.findElements(continueShopping).size() > 0))
+		if (!(driver.findElements(lastNameField).size() > 0))
 			return false;
-		if (!(driver.findElements(checkOut).size() > 0))
+		if (!(driver.findElements(postalCodeField).size() > 0))
+			return false;
+		if (!(driver.findElements(cancelButton).size() > 0))
+			return false;
+		if (!(driver.findElements(continueButton).size() > 0))
 			return false;
 		return true;
+		
 	}
 
-	public boolean checkProductExist() {
-		if (!(driver.findElements(product).size() > 0))
-			return false;
-		return true;
-	}
+
 	public CheckoutPage(WebDriver driver) {
 		this.driver=driver;
 		wait = new WebDriverWait(driver, 5);
@@ -56,53 +48,24 @@ public class CheckoutPage {
 		driver.findElement(lastNameField).clear();
 		driver.findElement(lastNameField).sendKeys(lastName);
 	}
-
-	public void enterPhoneNumber(String phone) {
-		driver.findElement(phoneField).clear();
-		driver.findElement(phoneField).sendKeys(phone);
+	
+	public void enterPostalCode(String postalCode) {
+		driver.findElement(postalCodeField).clear();
+		driver.findElement(postalCodeField).sendKeys(postalCode);
 	}
-
-	public void enterAddress(String address) {
-		driver.findElement(addressField).clear();
-		driver.findElement(addressField).sendKeys(address);
+	
+	public void clickCancel() {
+		driver.findElement(cancelButton).click();
 	}
-
-	public void enterCity(String city) {
-		driver.findElement(cityField).clear();
-		driver.findElement(cityField).sendKeys(city);
-	}
-
-	public void selectState(String state) {
-		new Select(driver.findElement(stateProvinceDropdown)).selectByValue(state);
-	}
-
-	public void enterZipcode(String zipcode) {
-		driver.findElement(zipcodeField).clear();
-		driver.findElement(zipcodeField).sendKeys(zipcode);
-	}
-
-	public void enterEmail(String email) {
-		driver.findElement(emailField).clear();
-		driver.findElement(emailField).sendKeys(email);
+	
+	public void clickContinue() {
+		driver.findElement(continueButton).click();
 	}
 
 	public void refresh() {
 		driver.navigate().refresh();
 	}
 
-	public boolean isErrorContainerDisplayed() {
-		return wait.until(ExpectedConditions.visibilityOfElementLocated(errorContainer)).isDisplayed();
-	}
 
-	public boolean isContinueButtonEnabled() {
-		return wait.until(ExpectedConditions.elementToBeClickable(continueToPaymentButton)).isDisplayed();
-	}
 	
-	public void removeFromCart() {
-		driver.findElement(removeButton).click();
-	}
-	
-	public void continueShopping() {
-		driver.findElement(continueShopping).click();
-	}
 }

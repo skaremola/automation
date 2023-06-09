@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Login with different users" duration-ms="7839" started-at="2023-06-08T14:59:24 EDT" finished-at="2023-06-08T14:59:32 EDT">
+  <suite name="CheckoutPageSuite" duration-ms="8602" started-at="2023-06-09T14:58:16 EDT" finished-at="2023-06-09T14:58:24 EDT">
     <groups>
     </groups>
-    <test name="Add product to cart" duration-ms="7839" started-at="2023-06-08T14:59:24 EDT" finished-at="2023-06-08T14:59:32 EDT">
-      <class name="tests.ProductPageTest">
-        <test-method status="PASS" signature="setup(org.testng.ITestContext)[pri:0, instance:tests.ProductPageTest@15d0c81b]" name="setup" is-config="true" duration-ms="3695" started-at="2023-06-08T14:59:24 EDT" finished-at="2023-06-08T14:59:28 EDT">
+    <test name="CheckoutPageTest" duration-ms="8602" started-at="2023-06-09T14:58:16 EDT" finished-at="2023-06-09T14:58:24 EDT">
+      <class name="tests.CheckoutPageTest">
+        <test-method status="PASS" signature="setup(org.testng.ITestContext)[pri:0, instance:tests.CheckoutPageTest@15d0c81b]" name="setup" is-config="true" duration-ms="4496" started-at="2023-06-09T14:58:16 EDT" finished-at="2023-06-09T14:58:20 EDT">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@afb5821]]>
+                <![CDATA[org.testng.TestRunner@6f099cef]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="verifyAddToCart(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:tests.ProductPageTest@15d0c81b]" name="verifyAddToCart" duration-ms="1246" started-at="2023-06-08T14:59:28 EDT" finished-at="2023-06-08T14:59:29 EDT">
+        <test-method status="PASS" signature="verifyCheckoutPage(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:tests.CheckoutPageTest@15d0c81b]" name="verifyCheckoutPage" duration-ms="1605" started-at="2023-06-09T14:58:20 EDT" finished-at="2023-06-09T14:58:22 EDT">
           <params>
             <param index="0">
               <value>
@@ -38,8 +38,8 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyAddToCart -->
-        <test-method status="PASS" signature="verifyRemoveFromCart(java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:tests.ProductPageTest@15d0c81b]" name="verifyRemoveFromCart" duration-ms="880" started-at="2023-06-08T14:59:29 EDT" finished-at="2023-06-08T14:59:30 EDT">
+        </test-method> <!-- verifyCheckoutPage -->
+        <test-method status="PASS" signature="verifyContinueCheckout(java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:tests.CheckoutPageTest@15d0c81b]" name="verifyContinueCheckout" duration-ms="1591" started-at="2023-06-09T14:58:22 EDT" finished-at="2023-06-09T14:58:23 EDT">
           <params>
             <param index="0">
               <value>
@@ -59,33 +59,12 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyRemoveFromCart -->
-        <test-method status="PASS" signature="verifyContinueShopping(java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:tests.ProductPageTest@15d0c81b]" name="verifyContinueShopping" duration-ms="1154" started-at="2023-06-08T14:59:30 EDT" finished-at="2023-06-08T14:59:31 EDT">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[standard_user]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[secret_sauce]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[yes]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyContinueShopping -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:tests.ProductPageTest@15d0c81b]" name="tearDown" is-config="true" duration-ms="827" started-at="2023-06-08T14:59:31 EDT" finished-at="2023-06-08T14:59:32 EDT">
+        </test-method> <!-- verifyContinueCheckout -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:tests.CheckoutPageTest@15d0c81b]" name="tearDown" is-config="true" duration-ms="843" started-at="2023-06-09T14:58:23 EDT" finished-at="2023-06-09T14:58:24 EDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- tests.ProductPageTest -->
-    </test> <!-- Add product to cart -->
-  </suite> <!-- Login with different users -->
+      </class> <!-- tests.CheckoutPageTest -->
+    </test> <!-- CheckoutPageTest -->
+  </suite> <!-- CheckoutPageSuite -->
 </testng-results>

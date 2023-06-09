@@ -23,6 +23,7 @@ public class LoginPageTest extends BasePage{
 		login.clickSignIn();
 		Assert.assertTrue(login.verifyNewPage(isvaliduser));
 	}
+	
 
 	@Test(priority=0) //, dataProvider="accounts")
 	@Parameters({"username", "password", "isvaliduser"})

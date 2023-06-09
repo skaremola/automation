@@ -37,11 +37,7 @@
 			<class name="tests.LoginPageTest" />
 		</classes>
 	</test>
-	<test name="Elements check in Homepage">
-		<classes>
-			<class name="tests.HomePageTest" />
-		</classes>
-	</test>
+
 			<test name="Add product to cart">
 		<parameter name="username" value="standard_user" />
 		<parameter name="password" value="secret_sauce" />
@@ -50,4 +46,9 @@
 			<class name="tests.ProductPageTest" />
 		</classes>
 		</test>
+			<test name="Elements check in Homepage">
+		<classes>
+			<class name="tests.HomePageTest" />
+		</classes>
+	</test>
 </suite>

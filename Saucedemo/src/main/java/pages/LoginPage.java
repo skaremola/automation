@@ -28,6 +28,7 @@ public class LoginPage {
 	}
 	
 	public void logOut() {
+		driver.findElement(openMenu).click();
 		driver.findElement(logOutButton).click();
 	}
 	

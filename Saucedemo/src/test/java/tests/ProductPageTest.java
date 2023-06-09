@@ -1,15 +1,25 @@
 package tests;
 
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import pages.BasePage;
 import pages.LoginPage;
 import pages.ProductPage;
-import pages.CheckoutPage;
-import tests.LoginPageTest;
+import pages.CartPage;
+
 
 public class ProductPageTest extends BasePage{
+	
+	WebDriver driver;
+	WebDriverWait wait;
+	
+	public ProductPageTest(WebDriver driver) {
+		this.driver=driver;
+		wait = new WebDriverWait(driver, 5);
+	}
 	
 	public void login(LoginPage login, String username, String password, String isvaliduser) {
 		login.typeUsername(username);
@@ -18,62 +28,54 @@ public class ProductPageTest extends BasePage{
 		Assert.assertTrue(login.verifyNewPage(isvaliduser));
 	}
 	
-	public void logout(LoginPage login) {
-		login.openMenu();
-		login.logOut();
-	}
 	
 	public void addToCart() {
-		CheckoutPage checkoutPage = new CheckoutPage(driver);
+		CartPage checkoutPage = new CartPage(driver);
 		ProductPage productPage = new ProductPage(driver);
 		productPage.addToCart();
 		productPage.clickCartSymbol();
 		checkoutPage.checkProductExist();
 	}
 	
+
 	@Test(priority=0) //, dataProvider="accounts")
 	@Parameters({"username", "password", "isvaliduser"})
-	public void verifyAddToCart(String username, String password, String isvaliduser){
-		LoginPage loginpage = new LoginPage(driver);
-		login(loginpage, username, password, isvaliduser);
+	public void verifyRemoveFromCart(String username, String password, String isvaliduser){
+		LoginPage loginPage = new LoginPage(driver);
+		login(loginPage, username, password, isvaliduser);
 		addToCart();
-		logout(loginpage);
+		CartPage checkoutPage = new CartPage(driver);
+		checkoutPage.removeFromCart();
+		loginPage.logOut();
 	}
 	@Test(priority=1) //, dataProvider="accounts")
 	@Parameters({"username", "password", "isvaliduser"})
-	public void verifyRemoveFromCart(String username, String password, String isvaliduser){
-		LoginPage loginpage = new LoginPage(driver);
-		CheckoutPage checkoutPage = new CheckoutPage(driver);
-		login(loginpage, username, password, isvaliduser);
+	public void verifyContinueShopping(String username, String password, String isvaliduser){
+		LoginPage loginPage = new LoginPage(driver);
+		login(loginPage, username, password, isvaliduser);
 		addToCart();
-		checkoutPage.removeFromCart();
-		logout(loginpage);
-	}
+		CartPage checkoutPage = new CartPage(driver);
+		checkoutPage.continueShopping();
+		loginPage.logOut();
+	}	
+	
 	@Test(priority=2) //, dataProvider="accounts")
 	@Parameters({"username", "password", "isvaliduser"})
-	public void verifyContinueShopping(String username, String password, String isvaliduser){
-		LoginPage loginpage = new LoginPage(driver);
-		CheckoutPage checkoutPage = new CheckoutPage(driver);
-		login(loginpage, username, password, isvaliduser);
+	public void verifyAddToCart(String username, String password, String isvaliduser){
+		LoginPage loginPage = new LoginPage(driver);
+		login(loginPage, username, password, isvaliduser);
 		addToCart();
-		checkoutPage.continueShopping();
-		logout(loginpage);
-	}	
-
-//	@Test(priority=0) //, dataProvider="accounts")
-//	@Parameters({"username", "password", "isvaliduser"})
-//	public void verifyAddToCart(String username, String password, String isvaliduser){
-//		LoginPage loginPage = new LoginPage(driver);
-//		CheckoutPage checkoutPage = new CheckoutPage(driver);
-//		ProductPage productPage = new ProductPage(driver);
-//		System.out.println("Entered username: "+ username);
-//		loginPage.typeUsername(username);
-//		System.out.println("Entered password: "+ password);
-//		loginPage.typePassword(password);
-//		loginPage.clickSignIn();
-//		productPage.addToCart();
-//		productPage.clickCartSymbol();
-//		checkoutPage.checkProductExist();
-//		}
+		loginPage.logOut();
+	}
+	@Test(priority=3) //, dataProvider="accounts")
+	@Parameters({"username", "password", "isvaliduser"})
+	public void verifyProceedToCheckout(String username, String password, String isvaliduser){
+		LoginPage loginPage = new LoginPage(driver);
+		login(loginPage, username, password, isvaliduser);
+		addToCart();
+		CartPage checkoutPage = new CartPage(driver);
+		checkoutPage.clickCheckoutButton();
+		//logout(loginpage);
+	}
 
 }

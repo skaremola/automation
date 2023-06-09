@@ -7,15 +7,12 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class CartPage {
+	
+	By product = By.cssSelector("a#item_4_title_link");
+	By removeButton = By.xpath("//button[text()='Remove']");
+	By continueShopping = By.xpath("//button[text()='Continue Shopping']");
+	By checkOutButton = By.xpath("//button[text()='Checkout']");
 
-	By removeOption = By.xpath("//button[contains(text(), 'Remove')]");
-	By emptyCartMessage = By.xpath("//div[@class='_1uv2']/h4[contains(text(), 'Your cart is empty.')]");
-	By addProductToCart = By.xpath("//div[9]//div[1]//form[1]//button[1]");
-	By productDetails = By.cssSelector("._4rzp");
-	By shippingCountryDropdown = By.cssSelector("#shippingCountry");
-	By checkoutButton = By.cssSelector("._4ju3._4pg_._3hmq._4phk");
-	By checkoutHeader = By.xpath("//span[@class='_45mg'][contains(text(), 'Checkout')]");
-	By checkoutPageContent = By.cssSelector("._33ng._663y.clearfix");
 
 	WebDriver driver;
 	WebDriverWait wait;
@@ -24,38 +21,33 @@ public class CartPage {
 		this.driver=driver;
 		wait = new WebDriverWait(driver, 5);
 	}
-	public void removeItemFromCart() {
-		driver.findElement(removeOption).click();
+	
+	public boolean checkElementsExist() {
+		if (!(driver.findElements(removeButton).size() > 0))
+			return false;
+		if (!(driver.findElements(continueShopping).size() > 0))
+			return false;
+		if (!(driver.findElements(checkOutButton).size() > 0))
+			return false;
+		return true;
 	}
 
-	public boolean isItemRemoved() {
-		return wait.until(ExpectedConditions.visibilityOfElementLocated(emptyCartMessage)).isDisplayed();
+	public boolean checkProductExist() {
+		if (!(driver.findElements(product).size() > 0))
+			return false;
+		return true;
 	}
-
-	public void addItemToCartAgain() {
-		driver.findElement(addProductToCart).click();
+	public void removeFromCart() {
+		driver.findElement(removeButton).click();
 	}
-
-	public boolean isItemAdded() {
-		return wait.until(ExpectedConditions.visibilityOfElementLocated(productDetails)).isDisplayed();
+	
+	public void continueShopping() {
+		driver.findElement(continueShopping).click();
 	}
-
-	public void selectCountry(String country) {
-		new Select(driver.findElement(shippingCountryDropdown)).selectByValue(country);
-		wait.until(ExpectedConditions.attributeToBe(shippingCountryDropdown, "value", country));
-	}
-
-	public String selectedCountry() {
-		return new Select(driver.findElement(shippingCountryDropdown)).getFirstSelectedOption().getText();
-	}
-
+	
 	public void clickCheckoutButton() {
-		driver.findElement(checkoutButton).click();
+		driver.findElement(checkOutButton).click();
 	}
 
-	public boolean isCheckoutPageLoaded() {
-		wait.until(ExpectedConditions.visibilityOfElementLocated(checkoutPageContent));
-		return driver.findElement(checkoutHeader).isDisplayed();
-	}
 
 }
