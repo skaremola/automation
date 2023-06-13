@@ -3,10 +3,8 @@ package tests;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import com.relevantcodes.extentreports.LogStatus;
 
 import pages.BasePage;
-import pages.HomePage;
 import pages.LoginPage;
 
 public class HomePageTest extends BasePage{

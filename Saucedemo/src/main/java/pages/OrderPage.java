@@ -2,8 +2,6 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class OrderPage {
@@ -13,7 +11,7 @@ public class OrderPage {
 	By shipInfo = By.xpath("//div[text()='Shipping Information']");
 	By priceTotal = By.xpath("//div[text()='Price Total']");
 	By cancelButton = By.cssSelector("button#cancel");
-	By finishButton = By.cssSelector("input#finish");
+	By finishButton = By.cssSelector("button#finish");
 	By ordCompMsg = By.cssSelector("h2.complete-header");
 	
 
@@ -36,6 +34,13 @@ public class OrderPage {
 		return true;
 		
 	}
+	
+	public boolean checkOrderConfirmation() {
+		if (!(driver.findElement(ordCompMsg).getText().equals("Thank you for your order!")))
+			return false;
+		return true;
+	}
+	
 
 
 	public OrderPage(WebDriver driver) {

@@ -1,13 +1,9 @@
 package pages;
 
-import java.util.List;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.support.ui.Select;
 
@@ -19,11 +15,7 @@ public class ProductPage {
 	String itemPrice = "(//div[@class='inventory_item_price'])[1]";
 	String productName= "(//div[@class='inventory_item_name'])[1]";
 	By cartSymbol = By.cssSelector("a.shopping_cart_link");
-//	By addtoCart2 = By.xpath("//button[text()='Add to cart']");
-//	By addToCart3 = By.xpath("//button[@name='add-to-cart-sauce-labs-backpack']");
-//	By itemPrice1 = By.xpath("//div[@class='inventory_item_price']");
-//	By productName1= By.xpath("//div[@class='inventory_item_name']");
-//	By productHeader = By.cssSelector("iv.header_label");
+
 
 	WebDriver driver;
 	WebDriverWait wait;
@@ -32,7 +24,16 @@ public class ProductPage {
 		this.driver=driver;
 		wait = new WebDriverWait(driver, 10);
 	}
-
+	
+	public boolean checkElementsExist() {
+		if (!(driver.findElements(productSortContainer).size() > 0))
+			return false;
+		if (!(driver.findElements(products).size() > 0))
+			return false;
+		if (!(driver.findElements(cartSymbol).size() > 0))
+			return false;
+		return true;
+	}
 
 	public void sortProductsaz() {
 		Select drpCountry = new Select(driver.findElement(productSortContainer));
@@ -54,7 +55,7 @@ public class ProductPage {
 		drpCountry.selectByVisibleText("Price (high to low)");
 	}
 	
-	public void addToCart() {
+	public void clickAddToCart() {
 		driver.findElement(By.xpath(addToCart)).click();
 	}
 

@@ -4,18 +4,18 @@
   <listeners>
     <listener class-name="util.ExtentReportListener"/>
   </listeners>
-  <test thread-count="5" name="CheckoutPageTest(failed)">
+  <test thread-count="5" name="ProductPageTest(failed)">
     <parameter name="password" value="secret_sauce"/>
     <parameter name="isvaliduser" value="yes"/>
     <parameter name="username" value="standard_user"/>
     <classes>
-      <class name="tests.CheckoutPageTest">
+      <class name="tests.ProductPageTest">
         <methods>
           <include name="tearDown"/>
-          <include name="verifyContinueCheckout" invocation-numbers="0"/>
+          <include name="verifyProceedToCheckout" invocation-numbers="0"/>
           <include name="setup"/>
         </methods>
-      </class> <!-- tests.CheckoutPageTest -->
+      </class> <!-- tests.ProductPageTest -->
     </classes>
-  </test> <!-- CheckoutPageTest(failed) -->
+  </test> <!-- ProductPageTest(failed) -->
 </suite> <!-- Failed suite [CheckoutPageSuite] -->

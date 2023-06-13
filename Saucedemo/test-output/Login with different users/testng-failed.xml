@@ -12,6 +12,7 @@
       <class name="tests.ProductPageTest">
         <methods>
           <include name="tearDown"/>
+          <include name="verifyProceedToCheckout" invocation-numbers="0"/>
           <include name="verifyContinueShopping" invocation-numbers="0"/>
           <include name="verifyAddToCart" invocation-numbers="0"/>
           <include name="setup"/>
@@ -19,4 +20,20 @@
       </class> <!-- tests.ProductPageTest -->
     </classes>
   </test> <!-- Add product to cart(failed) -->
+  <test thread-count="5" name="ProductPageTest(failed)">
+    <parameter name="password" value="secret_sauce"/>
+    <parameter name="isvaliduser" value="yes"/>
+    <parameter name="username" value="standard_user"/>
+    <classes>
+      <class name="tests.ProductPageTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="verifyProceedToCheckout" invocation-numbers="0"/>
+          <include name="verifyContinueShopping" invocation-numbers="0"/>
+          <include name="verifyAddToCart" invocation-numbers="0"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- tests.ProductPageTest -->
+    </classes>
+  </test> <!-- ProductPageTest(failed) -->
 </suite> <!-- Failed suite [Login with different users] -->

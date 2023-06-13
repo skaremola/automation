@@ -11,7 +11,7 @@ public class LoginPage {
 	By passwordField = By.id("password");
 	By signInButton = By.id("login-button");
 	By openMenu = By.cssSelector("button#react-burger-menu-btn");
-	By logOutButton = By.xpath("//a[text()='Logout']");
+	By logOutButton = By.cssSelector("a#logout_sidebar_link");
 	By sauseLogo = By.cssSelector("div.login_logo");
 	By errorContainer = By.cssSelector("h3");
 

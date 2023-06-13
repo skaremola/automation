@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeDriverService;
 import org.testng.ITestContext;
-import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 
 import com.relevantcodes.extentreports.ExtentReports;
@@ -29,7 +29,7 @@ public class BasePage {
 		context.setAttribute("WebDriver", driver);
 	}
 
-	@AfterClass(alwaysRun=true)
+	@AfterTest(alwaysRun=true)
 	public void tearDown() {
 		driver.quit();
 	}

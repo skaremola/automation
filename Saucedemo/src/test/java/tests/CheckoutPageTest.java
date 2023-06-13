@@ -1,40 +1,43 @@
 package tests;
 
-import org.testng.Assert;
+import org.testng.AssertJUnit;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-
-import com.relevantcodes.extentreports.LogStatus;
-
 import pages.BasePage;
+import pages.CartPage;
 import pages.CheckoutPage;
 import pages.LoginPage;
-import tests.ProductPageTest;
-
+import pages.OrderPage;
 public class CheckoutPageTest extends BasePage{
 
 	@Test(priority=0) //, dataProvider="accounts")
 	@Parameters({"username", "password", "isvaliduser"})
 	public void verifyCheckoutPage(String username, String password, String isvaliduser) {
-		ProductPageTest prodPageTest = new ProductPageTest(driver);
 		LoginPage loginPage = new LoginPage(driver);
-		prodPageTest.verifyProceedToCheckout(username, password, isvaliduser);
 		CheckoutPage checkoutPage = new CheckoutPage(driver);
-		Assert.assertEquals(checkoutPage.checkElementsExist(), true, "Element is missing in Checkout page");
+		ProductPageTest.login(loginPage, username, password, isvaliduser);
+		ProductPageTest.addToCart();
+		CartPage cartPage = new CartPage(driver);
+		cartPage.clickCheckoutButton();
+		AssertJUnit.assertEquals(checkoutPage.checkElementsExist(), true);
 		loginPage.logOut();
 	}
 	
 	@Test(priority=1) //, dataProvider="accounts")
 	@Parameters({"username", "password", "isvaliduser"})
-	public void verifyContinueCheckout(String username, String password, String isvaliduser){
-		ProductPageTest prodPageTest = new ProductPageTest(driver);
+	public void verifyContinueCheckout(String username, String password, String isvaliduser) {
 		LoginPage loginPage = new LoginPage(driver);
-		prodPageTest.verifyProceedToCheckout(username, password, isvaliduser);
 		CheckoutPage checkoutPage = new CheckoutPage(driver);
+		OrderPage orderPage = new OrderPage(driver);
+		ProductPageTest.login(loginPage, username, password, isvaliduser);
+		ProductPageTest.addToCart();
+		CartPage cartPage = new CartPage(driver);
+		cartPage.clickCheckoutButton();
 		checkoutPage.enterFirstName("Sridevi");
 		checkoutPage.enterLastName("K");
 		checkoutPage.enterPostalCode("12345");
 		checkoutPage.clickContinue();
+		AssertJUnit.assertEquals(orderPage.checkElementsExist(), true);
 		loginPage.logOut();
 	}
 	

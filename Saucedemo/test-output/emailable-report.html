@@ -8,12 +8,70 @@
 <body>
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
-<tr><th colspan="8">CheckoutPageSuite</th></tr>
-<tr><td><a href="#t0">CheckoutPageTest</a></td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">8,602</td><td></td><td></td></tr>
+<tr><th colspan="8">Failed suite [Failed suite [Saucedemo Smoke]]</th></tr>
+<tr><td><a href="#t0">Add product to cart(failed)(failed)</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">2</td><td class="num">7,612</td><td></td><td></td></tr>
+<tr class="stripe"><td><a href="#t1">ProductPageTest test cases(failed)(failed)</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num attn">2</td><td class="num">6,031</td><td></td><td></td></tr>
+<tr><th>Total</th><th class="num">1</th><th class="num">0</th><th class="num">0</th><th class="num attn">4</th><th class="num">13,643</th><th colspan="2"></th></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">CheckoutPageSuite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">CheckoutPageTest &#8212; passed</th></tr><tr class="passedeven"><td rowspan="2">tests.CheckoutPageTest</td><td><a href="#m0">verifyCheckoutPage</a></td><td rowspan="1">1686337100595</td><td rowspan="1">1605</td></tr><tr class="passedeven"><td><a href="#m1">verifyContinueCheckout</a></td><td rowspan="1">1686337102219</td><td rowspan="1">1591</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Failed suite [Failed suite [Saucedemo Smoke]]</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Add product to cart(failed)(failed) &#8212; failed</th></tr><tr class="failedeven"><td rowspan="2">tests.ProductPageTest</td><td><a href="#m0">verifyAddToCart</a></td><td rowspan="1">1686677513110</td><td rowspan="1">1095</td></tr><tr class="failedeven"><td><a href="#m1">verifyProceedToCheckout</a></td><td rowspan="1">1686677514484</td><td rowspan="1">42</td></tr></tbody>
+<tbody id="t1"><tr><th colspan="4">ProductPageTest test cases(failed)(failed) &#8212; failed</th></tr><tr class="failedeven"><td rowspan="2">tests.ProductPageTest</td><td><a href="#m2">verifyAddToCart</a></td><td rowspan="1">1686677519563</td><td rowspan="1">766</td></tr><tr class="failedeven"><td><a href="#m3">verifyProceedToCheckout</a></td><td rowspan="1">1686677520589</td><td rowspan="1">15</td></tr><tr><th colspan="4">ProductPageTest test cases(failed)(failed) &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">tests.ProductPageTest</td><td><a href="#m4">verifyContinueShopping</a></td><td rowspan="1">1686677518114</td><td rowspan="1">1442</td></tr></tbody>
 </table>
-<h2>CheckoutPageTest</h2><h3 id="m0">tests.CheckoutPageTest#verifyCheckoutPage</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr><tr class="param stripe"><td>standard_user</td><td>secret_sauce</td><td>yes</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">tests.CheckoutPageTest#verifyContinueCheckout</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr><tr class="param stripe"><td>standard_user</td><td>secret_sauce</td><td>yes</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Add product to cart(failed)(failed)</h2><h3 id="m0">tests.ProductPageTest#verifyAddToCart</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr><tr class="param stripe"><td>standard_user</td><td>secret_sauce</td><td>yes</td></tr><tr><th colspan="3">Exception</th></tr><tr><td colspan="3"><div class="stacktrace">java.lang.AssertionError: expected:&lt;false&gt; but was:&lt;true&gt;
+	at tests.ProductPageTest.verifyAddToCart(ProductPageTest.java:66)
+	at java.util.ArrayList.forEach(Unknown Source)
+... Removed 32 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">tests.ProductPageTest#verifyProceedToCheckout</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr><tr class="param stripe"><td>standard_user</td><td>secret_sauce</td><td>yes</td></tr><tr><th colspan="3">Exception</th></tr><tr><td colspan="3"><div class="stacktrace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;#user\-name&quot;}
+  (Session info: chrome=114.0.5735.110)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;DESKTOP-LR00Q52&apos;, ip: &apos;192.168.1.96&apos;, os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_371&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.110, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: C:\Users\sride\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:56340}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: f5c9c43f941796f3fee55954e34b6de9
+*** Element info: {Using=id, value=user-name}
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:372)
+	at org.openqa.selenium.By$ById.findElement(By.java:188)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at pages.LoginPage.typeUsername(LoginPage.java:36)
+	at tests.ProductPageTest.login(ProductPageTest.java:20)
+	at tests.ProductPageTest.verifyProceedToCheckout(ProductPageTest.java:75)
+	at java.util.ArrayList.forEach(Unknown Source)
+... Removed 31 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>ProductPageTest test cases(failed)(failed)</h2><h3 id="m2">tests.ProductPageTest#verifyAddToCart</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr><tr class="param stripe"><td>standard_user</td><td>secret_sauce</td><td>yes</td></tr><tr><th colspan="3">Exception</th></tr><tr><td colspan="3"><div class="stacktrace">java.lang.AssertionError: expected:&lt;false&gt; but was:&lt;true&gt;
+	at tests.ProductPageTest.verifyAddToCart(ProductPageTest.java:66)
+	at java.util.ArrayList.forEach(Unknown Source)
+... Removed 32 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">tests.ProductPageTest#verifyProceedToCheckout</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr><tr class="param stripe"><td>standard_user</td><td>secret_sauce</td><td>yes</td></tr><tr><th colspan="3">Exception</th></tr><tr><td colspan="3"><div class="stacktrace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;#user\-name&quot;}
+  (Session info: chrome=114.0.5735.110)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;DESKTOP-LR00Q52&apos;, ip: &apos;192.168.1.96&apos;, os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_371&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.110, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: C:\Users\sride\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:56368}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: a79b526afcba1f62beea01716e41eb15
+*** Element info: {Using=id, value=user-name}
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:372)
+	at org.openqa.selenium.By$ById.findElement(By.java:188)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at pages.LoginPage.typeUsername(LoginPage.java:36)
+	at tests.ProductPageTest.login(ProductPageTest.java:20)
+	at tests.ProductPageTest.verifyProceedToCheckout(ProductPageTest.java:75)
+	at java.util.ArrayList.forEach(Unknown Source)
+... Removed 31 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m4">tests.ProductPageTest#verifyContinueShopping</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr><tr class="param stripe"><td>standard_user</td><td>secret_sauce</td><td>yes</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>
